@@ -1,42 +1,46 @@
-@import url(https://fonts.googleapis.com/css?family-Open+Sans);
 
-*{
-	padding: 0;
-	margin: 0;
-	font-family: "Open Sans"
+h1 {
+	background-color: #005883;
+  }
+
+  *{
+  	margin: 0;
+  	padding: 0;
+  	-webkit-box-sizing:border-box;
+  	-moz-box-sizing:border-box;
+  	box-sizing: border-box;
+  }
+
+  div#body{
+  	width: 100%;
+  	height: 200px;
+  	background-color:#005883; 
+  }
+
+.social{
+	position: fixed;
+	left: 0;
+	top: 400px;
+	z-index: 2000;
 }
 
-.navegacion nav{
-	width: auto;
-	height: 60px;
-	background: #005883;
-	justify-content: flex-end;
-}
-
-.navegacion nav ul{
-	display: flex;
+.social ul{
 	list-style: none;
-} 
+}
 
-.navegacion nav ul li a{
-	display: block;
-	padding: 20px 20px;
+.social ul li a{
+	display: inline-block;
 	color: #fff;
+	background: #fff;
+	padding: 10px 15px;
 	text-decoration: none;
+	-webkit-transition:all 500ms ease;
+	-o-transition:all 500ms ease ;
+	transition: all 500ms ease;
 }
 
-.navegacion nav ul ul{
-
-	position:sticky;
-	top: 60px;
-	display: block;
-	background-color: blue;
-	transform: translateX(60%);
-	opacity: 0;
-	transition:  all .6s
+.social ul li a:hover {
+	padding: 10px 30px;
+	background: #005883;
 }
 
-.navegacion nav li:hover ul{
-	opacity: 1;
-	transform: translateX(0%);
-}
