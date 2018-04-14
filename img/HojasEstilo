@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+<meta name="keywords" content="W3C, Gira, estándandar, Web, Consorcio, Oficina española, W3, tecnología, divulgación, autobús, premio, CSS, gira estándares w3c, hojas de estilo, estilo web, selector, propiedad, valor, color, estilo"/>
+<meta name="description" content="CSS es un mecanismo simple que describe cómo se va a mostrar un documento en la pantalla, o cómo se va a imprimir, o incluso cómo va a ser pronunciada la información presente en un documento a través de un dispositivo de lectura. Esta forma de descripción de estilos ofrece a los desarrolladores el control total sobre estilo y formato de sus documentos."/>
+<title>Guía Breve de CSS</title>
+<link rel="contents" href="index.html.es" title="Índice de las Guias"/>
+<link rel="stylesheet" type="text/css" href="./css/guias.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="./css/print.css"/>
+</head>
+<body>
+<div id="breadcrumbs">
+Estás en:
+<ul>
+<li>
+<a href="/" title="Sitio Web de la Oficina Española del W3C">Oficina Española</a>
+    <ul>
+        <li>&#187; <a href="/Divulgacion" title="Información y documentos divulgativos">Documentos y Guías</a>
+            <ul>
+                <li>&#187; <a href="/Divulgacion/GuiasBreves/" title="Índice de las Guias Breves de Tecnologías W3C">Guias Breves</a>
+                    <ul>
+                        <li>&#187; <span class="currentPage">Hojas de Estilo</span></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</li>
+</ul>    
+</div>
+<?php include("inc/cabecera.inc.php")?>
+<h1 id="inicio">Guía Breve de <acronym title="Cascading Style Sheets" xml:lang="en">CSS</acronym>
+</h1>
+<?php include("inc/menu.inc.php")?>
+<h2 id="intro">¿Qué es CSS?</h2>
+<p class="invisible">
+<a title="Ir directamente al uso" href="#uso">Saltar Introducción.</a>
+</p>
+<p>Hojas de Estilo en Cascada (<span xml:lang="en">Cascading Style Sheets</span>), es un mecanismo simple que describe cómo se va a mostrar un documento en la pantalla, o cómo se va a imprimir, o incluso cómo va a ser pronunciada la información presente en ese documento a través de un dispositivo de lectura. Esta forma de descripción de estilos ofrece a los desarrolladores el control total sobre estilo y formato de sus documentos.</p>
+<h2 id="uso">¿Para qué sirve?</h2>
+<p class="invisible">
+<a title="Ir directamente al funcionamiento" href="#funcionamiento">Saltar Uso.</a>
+</p>
+<p>CSS se utiliza para dar estilo a documentos  <a href="http://w3.org/MarkUp/" hreflang="en" title="Página principal de HTML"><acronym title="HyperText Markup Language" xml:lang="en">HTML</acronym></a> y <a href="http://w3.org/XML/" hreflang="en" title="Página principal de XML"><acronym title="eXtensible Markup Language" xml:lang="en">XML</acronym></a>, separando el contenido de la presentación. Los <em>Estilos</em> definen la forma de mostrar los elementos HTML y XML. CSS permite a los desarrolladores Web controlar el estilo y el formato de múltiples páginas Web al mismo tiempo. Cualquier cambio en el estilo marcado para un elemento en la CSS afectará a todas las páginas vinculadas a esa CSS en las que aparezca ese elemento.</p>
+<h2 id="funcionamiento">¿Cómo funciona?</h2>
+<p class="invisible">
+<a title="Ir directamente a los ejemplos" href="#ejemplo">Saltar Funcionamiento.</a>
+</p>
+<p>CSS funciona a base de reglas, es decir, declaraciones sobre el estilo de uno o más elementos. Las hojas de estilo están compuestas por una o más de esas reglas aplicadas a un documento HTML o XML.  La regla tiene dos partes: un selector y la declaración. A su vez la declaración está compuesta por una propiedad y el valor que se le asigne.</p>
+<p>
+<code>h1 {color: red;}</code>
+</p>
+<p>
+<code>h1</code> es el selector</p>
+<p>
+<code>{color: red;}</code> es la declaración</p>
+<p>El selector funciona como enlace entre el documento y el estilo, especificando los elementos que se van a ver afectados por esa declaración. La declaración es la parte de la regla que establece cuál será el efecto. En el ejemplo anterior, el selector <code>h1</code> indica que todos los elementos <code>h1</code> se verán afectados por la declaración donde se establece que la propiedad <code>color</code> va a tener el valor <code>red</code> (rojo) para todos los elementos <code>h1</code> del documento o documentos que estén vinculados a esa hoja de estilos.</p>
+<p>Las tres formas más conocidas de dar estilo a un documento son las siguientes:</p>
+<ul>
+<li>Utilizando una hoja de estilo externa que estará vinculada a un documento a través del elemento <code>&lt;link&gt;</code>, el cual debe ir situado en la sección <code>&lt;head&gt;</code>.
+
+<pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Título&lt;/title&gt;
+    <strong>&lt;link rel="stylesheet" type="text/css" href="http://www.w3.org/css/officeFloats.css" /&gt;</strong>
+  &lt;/head&gt;
+  &lt;body&gt;
+  .
+  .
+  .
+  .
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</li>
+<li>Utilizando el elemento <code>&lt;style&gt;</code>, en el interior del documento al que se le quiere dar estilo, y que generalmente se situaría en la sección  <code>&lt;head&gt;</code>. De esta forma los estilos serán reconocidos antes de que la página se cargue por completo. 
+				<pre>
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;hoja de estilo interna&lt;/title&gt;
+    <strong>&lt;style type="text/css"&gt;
+  
+      body {
+        padding-left: 11em;
+        font-family: Georgia, "Times New Roman", serif;
+        color: red;
+        background-color: #d8da3d; 
+      }
+    
+      h1 {
+        font-family: Helvetica, Geneva, Arial, sans-serif;
+      }
+    
+    &lt;/style&gt;</strong>
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Aquí se aplicará el estilo de letra para el Título&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+</li>
+<li>Utilizando estilos directamente sobre aquellos elementos que lo permiten a través del atributo <code>&lt;style&gt;</code> dentro de <code>&lt;body&gt;</code>. Pero este tipo de definición del estilo pierde las ventajas que ofrecen las hojas de estilo al mezclarse el contenido con la presentación.</li>
+</ul>
+<p>Algunas normas básicas a la hora de crear una CSS son las siguientes:</p>
+<ul>
+<li>En el siguiente ejemplo, <code>h1{color: red;}</code>, el <em>selector</em>, <code>&lt;h1&gt;</code>, le dice al navegador la parte del documento que se verá afectada por esa regla. Los selectores pueden aparecer individualmente o agrupados, separándolos con comas: 
+<pre>
+h1, h2, h3 {
+  color: red;
+}
+</pre>
+
+o lo que es lo mismo
+<pre>
+h1 {color: red;}
+h2 {color: red;}
+h3 {color: red;}
+</pre>
+</li>
+<li>La <em>propiedad</em>, que en este caso sería <code>color</code>, especifica qué aspecto se va a cambiar. En este ejemplo la propiedad cambiada será el color. Las propiedades que se desean modificar en una CSS para un mismo selector pueden agruparse, pero será necesario separar cada una de ellas con un punto y coma.
+				<pre>p {text-align:center;color:red}</pre>
+				Normalmente se describe una propiedad por línea, de la siguiente manera:
+				<pre>h1 {
+  padding-left: 11em;
+  font-family: Georgia, "Times New Roman",Times, serif;
+  color: red;
+  background-color: #d8da3d;
+}
+</pre>
+</li>
+<li>El <em>valor</em>, representado a la derecha de los dos puntos (<code>:</code>), establece el valor de la propiedad. Es importante recordar que si el valor está formado por más de una palabra, hay que ponerlo entre comillas. 
+				<pre>p {font-family: "sans serif";}</pre>
+</li>
+</ul>
+<h2 id="ejemplo">Ejemplos</h2>
+<p class="invisible">
+<a title="Ir directamente a la infomación complementaria" href="#masinfo">Saltar Ejemplos.</a>
+</p>
+<p>A continuación se muestran tres ejemplos de Hojas de Estilo diferentes, en las que se cambian algunas características,  vinculadas a este mismo documento: La Guía Breve de CSS. Comprueba el cambio de aspecto:</p>
+<ul>
+<li>
+				Guía Breve de CSS <a href="./ejemplos/CSS/EjemploSinCSS" title="Ejemplo en el que se muestra cómo es la página actual sin aplicar ninguna hoja de estilo">sin vincular a una CSS</a>
+</li>
+<li>
+				Guía Breve de CSS. <a href="./ejemplos/CSS/EjemploCSS1" title="Ejemplo en el que se muestra cómo es la página actual aplicando una hoja de estilo diferente">Ejemplo de Estilo 1</a>
+</li>
+<li>
+				Guía Breve de CSS. <a href="./ejemplos/CSS/EjemploCSS2" title="Ejemplo en el que se muestra cómo es la página actual aplicando una hoja de estilo diferente">Ejemplo de Estilo 2</a>
+</li>
+</ul>
+<h2 id="masinfo">Más información sobre CSS</h2>
+<dl>
+<dt><a href="http://www.w3c.es/Divulgacion/GuiasReferencia/CSS21">Guía de Referencia Rápida de CSS 2</a></dt>
+<dd>Incluye una referencia de todos los selectores, propiedades, valores, etc.</dd>
+<dt>
+<a href="http://www.w3.org/Style/CSS/" hreflang="en">Página principal de CSS</a>
+</dt>
+<dd>Incluye multitud de recursos sobre CSS.</dd>
+<dt>
+<a href="http://www.w3.org/Style/CSS/#specs" hreflang="en">Especificaciones CSS</a>
+</dt>
+<dd>Conjunto de todas las especificaciones de CSS existentes.</dd>
+<dt>
+<a href="http://www.w3.org/Style/Examples/011/firstcss" hreflang="en">Tutorial introductorio de CSS</a>
+</dt>
+<dd>Breve tutorial desarrollado por <a href="http://www.w3.org/People/Bos/" hreflang="en" title="Página personal de Bert Bos">Bert Bos</a> para quienes desean utilizar CSS y no tienen experiencia.</dd>
+<dt>
+<a href="http://www.w3.org/MarkUp/Guide/Style" hreflang="en">Añadir un toque de estilo</a>
+</dt>
+<dd>Guía desarrollada por <a href="http://www.w3.org/People/Raggett/" hreflang="en-us" title="Página personal de Dave Raggett">Dave Raggett</a> que te ayudará de forma sencilla a dar estilo a tus documentos.</dd>
+<dt>
+<a href="http://www.w3.org/Style/Examples/007/" hreflang="en">Consejos y Trucos de CSS</a>
+</dt>
+<dd>Colección de ejemplos CSS con una breve descripción de cómo utilizarlos.</dd>
+<dt>
+<a href="http://www.csszengarden.com/tr/espanol/" xml:lang="en" title="Sitio Web del Proyecto CSS Zen Garden">CSS Zen Garden</a>
+</dt>
+<dd>El Jardín Zen del CSS es un ejercicio de aprendizaje y demostración de las posibilidades de diseño que ofrece CSS, para ello se presentan diferentes hojas de estilo para un mismo contenido y así podremos ver los cambios de estilo que se producen sin tener que modificar el documento.</dd>
+<dt>
+<a href="http://www.camaleoncss.com/" title="Sitio Web del Proyecto Camaleón">Camaleón CSS</a>
+</dt>
+<dd>Proyecto de origen hispano inspirado en la misma idea y concepto original del <span xml:lang="en">CSS Zen Garden</span>.</dd>
+<dt>
+<a href="http://jigsaw.w3.org/css-validator/" hreflang="en" title="Validador online de CSS del W3C">Validador de CSS</a>
+</dt>
+<dd>Servicio del <acronym title="World Wide Web Consortium" xml:lang="en">W3C</acronym>
+<span xml:lang="en">online</span> y gratuito que nos permite comprobar la validez de las Hojas de Estilo.</dd>
+</dl>
+<?php include_once("./inc/pie.inc.php")?>
+</body>
+</html>

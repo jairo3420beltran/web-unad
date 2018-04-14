@@ -1,7 +1,6 @@
 /* eXeLearning Style Designer Compatible Style */
 html{font-size:105%}
-body{font:100%/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:0;text-align:left}
-
+body{font:100%/1.5 'Open Sans',Arial,Verdana,Helvetica,sans-serif;padding:15px;margin:auto;text-align:center;}
 h2{font-size:1.3em}
 h3{font-size:1.2em}
 h4{font-size:1.1em}
@@ -174,12 +173,14 @@ background-image:url(_style_icons_black.png);
 }
 body{
 /*fontFamily*/
-font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+font-family:Arial, Geneva, Arial, Helvetica, sans-serif;
 /*bodyColor*/
 color:#333333;
 /*contentBGColor*/
 background-color:#ffffff;
+margin: auto;
 }
+
 a{
 /*aColor*/
 color:#2495ff;
@@ -206,10 +207,10 @@ color:#ff7f00;
 /*headerTitleTextShadowColor*/
 text-shadow:1px 1px 1px #191919;
 /*headerTitleAlign*/
-text-align:right;
+text-align:center;
 }
 #siteFooter{
-border:1px solid /*footerBorderColor*/
+border:10px solid /*footerBorderColor*/
 #005fbf;
 /*footerColor*/
 color:#ffffff;
@@ -219,4 +220,74 @@ background-color:#005fbf;
 #siteFooter a{
 /*footerAColor*/
 color:#ffffff;
+}
+
+.container {
+  /* Por defecto en modo fila, uno al lado del otro */
+  display: flex;
+  flex-flow: row;
+}
+
+.item {
+  flex: 1 1 auto;  
+}
+
+@media (max-width: 750px) {
+  .container {
+    /* si es muy angosta, uno debajo del otro */
+    flex-flow: column;
+  }
+}
+
+.rojo {
+  background-color:#808080;
+}
+.verde {
+  background-color:#808080;
+}
+.azul {
+  background-color:#808080;
+}
+
+#col1 {
+  height:700px;
+  background: #DADBD8;
+  width:190px;
+  float:left;
+  margin: :auto;
+}
+#col2 {
+  height:700px;
+  background: #ffffff;
+  width:800px;
+  float:left;
+margin:center;
+}
+img{
+  height:150px;
+  width:150px;
+  display: block;
+border-radius: 50%;
+margin:auto;
+display: block;
+} 
+
+#col3 {
+  height:700px;
+  background: #DADBD8;
+  width:190px;
+  float:left;
+}
+
+footer{
+ height: 60px;
+ clear:both;
+ background: #593939;
+}
+
+p{ padding - left: lem;
+	padding-right: lem;
+	padding-top: :lem;
+	line-height: 1.4em; 
+ 
 }
