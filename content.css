@@ -5,7 +5,14 @@ h2{font-size:1.3em}
 h3{font-size:1.2em}
 h4{font-size:1.1em}
 h5{font-size:1em}
-p{margin:1em 0}
+p{
+
+padding-left: 1em;
+padding-right: 1em;
+padding-top: 1em;
+line-height: 1.4em;
+
+}
 .score.js-feedback{margin-bottom:1em}
 
 #header,#emptyHeader,#nodeDecoration{padding:0 20px;height:auto!important;height:120px;min-height:120px;font-size:1.6em;font-weight:300;border-style:1px;border-width:1px}
@@ -250,14 +257,14 @@ color:#ffffff;
 }
 
 #col1 {
-  height:700px;
+  height:740px;
   background: #DADBD8;
   width:190px;
   float:left;
   margin: :auto;
 }
 #col2 {
-  height:700px;
+  height:740px;
   background: #ffffff;
   width:800px;
   float:left;
@@ -273,7 +280,7 @@ display: block;
 } 
 
 #col3 {
-  height:700px;
+  height:740px;
   background: #DADBD8;
   width:190px;
   float:left;
